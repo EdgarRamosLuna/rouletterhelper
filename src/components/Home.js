@@ -61,22 +61,16 @@ const Home = () => {
         <div className="container">
             
             <div className="cont-data">
+                <div className="colors">
+                    <div className="colors-container">
+                        {color}
+                    </div>
+                 </div>
                 <div className="color-btn">
                    
                     <div className='btns'>
                         <div className='btn'>
-                            <div className="btns-btn">
-                                <div className="btn-r">
-                                    <button onClick={()=> addColor(1)}>Red</button>
-                                </div>
-                                <div className="btn-b">
-                                    <button onClick={()=> addColor(2)}>Black</button>
-                                </div>
-                                <div className="btn-re">
-                                    <button onClick={()=> reset()}>Reset</button>
-                                </div>
-                                
-                            </div>
+                            
                             <div className="colors-contador">
                                 <div>
                                     <span style={{color:"red"}}> Red:</span> {contadorR}
@@ -90,14 +84,23 @@ const Home = () => {
                                     <p style={{color:"green"}}>Dominate:{ dominante == 1 ? <Red />:<Black />}</p>
                                 </div>
                             </div>
+                            <div className="btns-btn">
+                                <div className="btn-r">
+                                    <button onClick={()=> addColor(1)}>Red</button>
+                                </div>
+                                <div className="btn-b">
+                                    <button onClick={()=> addColor(2)}>Black</button>
+                                </div>
+                                <div className="btn-re">
+                                    <button onClick={()=> reset()}>Reset</button>
+                                </div>
+                                
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
-                 <div className="colors">
-                    <div className="colors-container">
-                        {color}
-                    </div>
-                 </div>
+                 
             </div>
         </div>    
     </HomeS>
