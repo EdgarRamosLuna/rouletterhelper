@@ -22,11 +22,11 @@ export const HomeS = styled.div`
     }
     .colors-container {
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         gap: 10px;
         flex-wrap:wrap ;
-        max-width: 770px;
+        max-width: 800px;
         height:80%;
         overflow-y:auto ;
         div{
@@ -44,8 +44,11 @@ export const HomeS = styled.div`
         width:25%;
         display:flex ;
         position: relative;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        @media(max-width:1300px){
+            align-items: center;
+        }
     }
     .btns {
         width: 100%;
@@ -53,16 +56,26 @@ export const HomeS = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        
     }
     .btn {
-        width: 20%;
+        width: 30%;
         position: fixed;
         display: flex;
         gap: 10px;
         justify-content: space-around;
-        align-items: center;
+        align-items: start;
         height: 293px;
-
+        padding-top: 5%;
+        height: 100%;
+        box-sizing: border-box;
+        flex-wrap:wrap;
+        @media(max-width:1500px){
+            top: unset;
+            align-items: center;
+            box-sizing: border-box;
+            padding:25px; ;
+        }
         button{
             border: 0;
             width: 100px;
@@ -73,8 +86,12 @@ export const HomeS = styled.div`
             border: 1px solid rgba(255,255,255,0.8);
             border-radius: 100%;
         }
-        .btn-r{
-            width: 50%;
+        .btn-r, .btn-b{
+            width: 49%;
+            @media(max-width:1300px){
+                width: 100%;
+                margin: 15px 0;
+            }
         }
         .btn-r button{
             background:red;
@@ -110,11 +127,38 @@ export const HomeS = styled.div`
             box-sizing: border-box;
             height: 50px;
             width: 50px;
-            margin-top: 5px;
+            margin-top: 15px;
         }
     }
     .colors-container .colors-container:nth-child(7n+5){
         
     }
-    
+    .numbers {
+        background: #8250ff;
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        filter: drop-shadow(rgb(255,255,255) 0px -1px 6px);
+        border: 1px solid rgba(255,255,255,0.8);
+        border-radius: 15px;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+    .number-item {
+        filter: drop-shadow(rgb(31, 0, 108) 0px 5px 5px);
+        font-size: 1.3em;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 6%;
+        cursor: pointer;
+        transition:all 0.3s;
+        &:hover{
+            scale:1.1;
+            transition:all 0.3s;
+            filter: drop-shadow(rgb(31, 0, 108) 0px 2px 1px);
+        }
+    }
 `;
