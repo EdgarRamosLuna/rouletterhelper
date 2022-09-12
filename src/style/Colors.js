@@ -41,13 +41,18 @@ export const HomeS = styled.div`
         justify-content: center;
     }
     .color-btn{
-        width:20%;
+        width:25%;
         display:flex ;
         position: relative;
+        align-items: center;
+        justify-content: center;
     }
     .btns {
         width: 100%;
         position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .btn {
         width: 20%;
