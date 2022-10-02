@@ -10,16 +10,18 @@ const Home = () => {
   const [color, setColor] = useState([]);
   const [contadorG, setContadorG] = useState(0);
   const [dominante, setDominante] = useState(0);
-  const addColor = (color) =>{
+  
+  const addColor = (color, numb = 0, index) =>{
+    setContadorG(prev => prev + 1);
     if(color == 1){
-        setColor(prevcolor => ([...prevcolor, <Red/>]));
+        setColor(prevcolor => ([...prevcolor, {id:contadorG+1,"content":<Red numbe={numb} deleteI={deleteItems} inD={contadorG+1} colorDa={1} />}]));
         setContadorR(prev => prev + 1);
     }
     if(color == 2){
-        setColor(prevcolor => ([...prevcolor, <Black/>]));
+        setColor(prevcolor => ([...prevcolor, {id:contadorG+1,"content":<Black numbe={numb} deleteI={deleteItems} inD={contadorG+1} colorDa={2} />}]));
         setContadorB(prev => prev + 1);
     }
-    setContadorG(prev => prev + 1);
+    
   }
   const reset = () =>{
     setColor([]);
@@ -55,48 +57,55 @@ const Home = () => {
   useEffect(() => {
     check7();
   }, [color]);
+  const deleteB = () =>{
+    setColor(prev=>{
+       // return prev.filter(color=>color.idcat!=idcat) 
+    })
+    setContadorR(prev => prev - 1);
+  }
+  //console.log(color);
   const [numbers, setNumbers] = useState([]);
   const [numbersC, setNumbersC] = useState([]);
   const generateNumbers = () =>{
     for (let z = 0; z < 37; z++) {
-        console.log(z);
-        if(z == 0){ setNumbers(prev => ([...prev, {"number":0}])) }
-        if(z == 1){ setNumbers(prev => ([...prev, {"number":32}])) }
-        if(z == 2){ setNumbers(prev => ([...prev, {"number":15}])) }
-        if(z == 3){ setNumbers(prev => ([...prev, {"number":19}])) }
-        if(z == 4){ setNumbers(prev => ([...prev, {"number":4}])) }
-        if(z == 5){ setNumbers(prev => ([...prev, {"number":21}])) }
-        if(z == 6){ setNumbers(prev => ([...prev, {"number":2}])) }
-        if(z == 7){ setNumbers(prev => ([...prev, {"number":25}])) }
-        if(z == 8){ setNumbers(prev => ([...prev, {"number":17}])) }
-        if(z == 9){ setNumbers(prev => ([...prev, {"number":34}])) }
-        if(z == 10){setNumbers(prev => ([...prev, {"number":6}])) }
-        if(z == 11){setNumbers(prev => ([...prev, {"number":27}])) }
-        if(z == 12){setNumbers(prev => ([...prev, {"number":31}])) }
-        if(z == 13){setNumbers(prev => ([...prev, {"number":36}])) }
-        if(z == 14){setNumbers(prev => ([...prev, {"number":11}])) }
-        if(z == 15){setNumbers(prev => ([...prev, {"number":30}])) }
-        if(z == 16){setNumbers(prev => ([...prev, {"number":8}])) }
-        if(z == 17){setNumbers(prev => ([...prev, {"number":23}])) }
-        if(z == 18){setNumbers(prev => ([...prev, {"number":10}])) }
-        if(z == 19){setNumbers(prev => ([...prev, {"number":5}])) }
-        if(z == 20){setNumbers(prev => ([...prev, {"number":21}])) }
-        if(z == 21){setNumbers(prev => ([...prev, {"number":16}])) }
-        if(z == 22){setNumbers(prev => ([...prev, {"number":33}])) }
-        if(z == 23){setNumbers(prev => ([...prev, {"number":1}])) }
-        if(z == 24){setNumbers(prev => ([...prev, {"number":20}])) }
-        if(z == 25){setNumbers(prev => ([...prev, {"number":14}])) }
-        if(z == 26){setNumbers(prev => ([...prev, {"number":31}])) }
-        if(z == 27){setNumbers(prev => ([...prev, {"number":9}])) }
-        if(z == 28){setNumbers(prev => ([...prev, {"number":22}])) }
-        if(z == 29){setNumbers(prev => ([...prev, {"number":18}])) }
-        if(z == 30){setNumbers(prev => ([...prev, {"number":29}])) }
-        if(z == 31){setNumbers(prev => ([...prev, {"number":7}])) }
-        if(z == 32){setNumbers(prev => ([...prev, {"number":28}])) }
-        if(z == 33){setNumbers(prev => ([...prev, {"number":12}])) }
-        if(z == 34){setNumbers(prev => ([...prev, {"number":35}])) }
-        if(z == 35){setNumbers(prev => ([...prev, {"number":3}])) }
-        if(z == 36){setNumbers(prev => ([...prev, {"number":26}])) }
+   //     console.log(z);
+        if(z == 0){ setNumbers(prev => ([...prev, {"number":0 , color:"white"}])) }
+        if(z == 1){ setNumbers(prev => ([...prev, {"number":32 , color:"red"}])) }
+        if(z == 2){ setNumbers(prev => ([...prev, {"number":15 , color:"black"}])) }
+        if(z == 3){ setNumbers(prev => ([...prev, {"number":19 , color:"red"}])) }
+        if(z == 4){ setNumbers(prev => ([...prev, {"number":4 , color:"black"}])) }
+        if(z == 5){ setNumbers(prev => ([...prev, {"number":21 , color:"red"}])) }
+        if(z == 6){ setNumbers(prev => ([...prev, {"number":2 , color:"black"}])) }
+        if(z == 7){ setNumbers(prev => ([...prev, {"number":25 , color:"red"}])) }
+        if(z == 8){ setNumbers(prev => ([...prev, {"number":17 , color:"black"}])) }
+        if(z == 9){ setNumbers(prev => ([...prev, {"number":34 , color:"red"}])) }
+        if(z == 10){setNumbers(prev => ([...prev, {"number":6 , color:"black"}])) }
+        if(z == 11){setNumbers(prev => ([...prev, {"number":27 , color:"red"}])) }
+        if(z == 12){setNumbers(prev => ([...prev, {"number":13 , color:"black"}])) }
+        if(z == 13){setNumbers(prev => ([...prev, {"number":36 , color:"red"}])) }
+        if(z == 14){setNumbers(prev => ([...prev, {"number":11 , color:"black"}])) }
+        if(z == 15){setNumbers(prev => ([...prev, {"number":30 , color:"red"}])) }
+        if(z == 16){setNumbers(prev => ([...prev, {"number":8 , color:"black"}])) }
+        if(z == 17){setNumbers(prev => ([...prev, {"number":23 , color:"red"}])) }
+        if(z == 18){setNumbers(prev => ([...prev, {"number":10 , color:"black"}])) }
+        if(z == 19){setNumbers(prev => ([...prev, {"number":5 , color:"red"}])) }
+        if(z == 20){setNumbers(prev => ([...prev, {"number":24 , color:"black"}])) }
+        if(z == 21){setNumbers(prev => ([...prev, {"number":16 , color:"red"}])) }
+        if(z == 22){setNumbers(prev => ([...prev, {"number":33 , color:"black"}])) }
+        if(z == 23){setNumbers(prev => ([...prev, {"number":1 , color:"red"}])) }
+        if(z == 24){setNumbers(prev => ([...prev, {"number":20 , color:"black"}])) }
+        if(z == 25){setNumbers(prev => ([...prev, {"number":14 , color:"red"}])) }
+        if(z == 26){setNumbers(prev => ([...prev, {"number":31 , color:"black"}])) }
+        if(z == 27){setNumbers(prev => ([...prev, {"number":9 , color:"red"}])) }
+        if(z == 28){setNumbers(prev => ([...prev, {"number":22 , color:"black"}])) }
+        if(z == 29){setNumbers(prev => ([...prev, {"number":18 , color:"red"}])) }
+        if(z == 30){setNumbers(prev => ([...prev, {"number":29 , color:"black"}])) }
+        if(z == 31){setNumbers(prev => ([...prev, {"number":7 , color:"red"}])) }
+        if(z == 32){setNumbers(prev => ([...prev, {"number":28 , color:"black"}])) }
+        if(z == 33){setNumbers(prev => ([...prev, {"number":12 , color:"red"}])) }
+        if(z == 34){setNumbers(prev => ([...prev, {"number":35 , color:"black"}])) }
+        if(z == 35){setNumbers(prev => ([...prev, {"number":3 , color:"red"}])) }
+        if(z == 36){setNumbers(prev => ([...prev, {"number":26 , color:"black"}])) }
         }
     
       
@@ -107,12 +116,27 @@ const Home = () => {
   const numArray = numbers.map((num, index) => {
     return(
 
-        <div className="number-item" style={{color:`${index == 0 ? "green":""}${index%2 == 0 ? "red":"black"}`}}>
-            {num.number}
+        <div className="number-item" style={{color:`${index == 0 ? "green":""}${num.color}`}} onClick={()=> addColor(num.color == "red" ? 1:2, num.number, index) }>
+           
+           
+                {num.number}
+     
         </div>
 
     );
   })
+  const deleteItems = (data, colorDa) =>{
+    let colorL = color.length;
+    setColor(prev=>{
+        return prev.filter(color=>color.id!=data);
+    });
+    setContadorG(prev => prev - 1);
+    if(color.length <= 0){
+        setColor([]);
+        setContadorG(0);
+    }
+    console.log(color);
+  }
   return (
     <HomeS>
         <div className="container">
@@ -120,7 +144,11 @@ const Home = () => {
             <div className="cont-data">
                 <div className="colors">
                     <div className="colors-container">
-                        {color}
+                        {
+                            color.map((num, index) =>
+                                num.content
+                            )
+                        }
                     </div>
                  </div>
                 <div className="color-btn">

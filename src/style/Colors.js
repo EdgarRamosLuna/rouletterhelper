@@ -6,7 +6,35 @@ export const Blackc = styled.div`
     background-color:#000;
     filter: drop-shadow(rgb(255, 255, 255) 0px -1px 6px);
     border: 1px solid rgba(255,255,255,0.8);
+    display:flex;
     border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    transition:all 0.3s ;
+    &:hover{
+        transition:all 0.3s ;
+        .remove-btn{
+            transition:all 0.3s ;
+            display:flex ;
+        }
+    }
+    .remove-btn {
+        position: absolute;
+        top: -5px;
+        margin: 0 !important;
+        padding: 0;
+        right: 0;
+        font-size: 1.5em;
+        display:none ;
+        transition:all 0.3s ;
+    }
+    .remove-btn i {
+        color: green;
+        background: white;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+    position: relative;
 `;
 export const Redc = styled.div`
     width:100px;
@@ -15,6 +43,34 @@ export const Redc = styled.div`
    // filter: drop-shadow(rgb(255, 255, 255) 0px -1px 6px);
     border: 1px solid rgba(255,255,255,0.8);
     border-radius: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        
+        .remove-btn{
+            transition:all 0.3s ;
+            display:flex ;
+        }
+    }
+    .remove-btn {
+        position: absolute;
+        top: -5px;
+        margin: 0 !important;
+        padding: 0;
+        right: 0;
+        font-size: 1.5em;
+        display:none ;
+        transition:all 0.3s ;
+    }
+    .remove-btn i {
+        color: green;
+        background: white;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+    
+    position: relative;
 `;
 export const HomeS = styled.div`
     .cont-data {
